@@ -1,11 +1,22 @@
+"use client";
 import StoreProvider from "./StoreProvider";
+import { useSelector } from "@/lib/hooks";
+
+const List = () => {
+  const todos = useSelector((state) => state.todos);
+  return (
+    <div>
+      {todos.map(todo => (
+        <li key={todo.id}>{todo.value}</li>
+      ))}
+    </div>
+  );
+};
 
 export default function Home() {
   return (
     <StoreProvider>
-      <main className="flex min-h-screen flex-col items-center justify-between p-24">
-        <h1>This is the demo page</h1>
-      </main>
+      <List />
     </StoreProvider>
   );
 }
