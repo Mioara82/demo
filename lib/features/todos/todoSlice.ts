@@ -2,9 +2,9 @@ import { createReducer } from "@reduxjs/toolkit";
 
 const todosReducer = createReducer(
   [
-    { value: "todo 1", id: 1 },
-    { value: "todo 2", id: 2 },
-    { value: "todo 3", id: 3 },
+    { value: "todo 1", id: 1,completed:false },
+    { value: "todo 2", id: 2,completed:false },
+    { value: "todo 3", id: 3,completed:false },
   ],
   (builder) => {
     builder
