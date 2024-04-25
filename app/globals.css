@@ -3,9 +3,10 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --dark-purple: #353570;
+  --light-grey: #F3F5F9;
+  --linear-gradient-purple:#6161D680;
+  
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,3 +32,13 @@ body {
     text-wrap: balance;
   }
 }
+  @layer base {
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-weight: 400;
+      font-display: swap;
+      src: url(/fonts/Roboto.woff2) format('woff2');
+    }
+  }
+

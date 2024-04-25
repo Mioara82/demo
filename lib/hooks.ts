@@ -1,6 +1,8 @@
-import { useDispatch as _useDispatch, useSelector as _useSelector, useStore as _useStore } from "react-redux";
+import { useDispatch, useSelector, useStore } from "react-redux";
+import type { TypedUseSelectorHook } from "react-redux";
 import type { RootState, AppDispatch, AppStore } from "./store";
 
-export const useDispatch = () => _useDispatch<AppDispatch>();
-export const useSelector = <TSelected = unknown>(selector: (state: RootState) => TSelected) => _useSelector<RootState, TSelected>(selector);
-export const useStore = () => _useStore<AppStore>();
+// Use throughout your app instead of plain `useDispatch` and `useSelector`
+export const useAppDispatch: () => AppDispatch = useDispatch;
+export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
+export const useAppStore: () => AppStore = useStore;

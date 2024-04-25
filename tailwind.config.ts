@@ -15,10 +15,25 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       colors: {
-        red:colors.red,
+        light:{
+          background: "#F3F5F9",
+          primary: "#6161D680",
+
+        },
+        dark:{
+
+        }
+      },
+      fontFamily: {
+        'space-grotesk': ['Space Grotesk', 'sans-serif'],
+      },
+      fontWeight: {
+        'medium': 500,
       },
     },
   },
   plugins: [],
 };
 export default config;
+
+
