@@ -1,23 +1,11 @@
 "use client";
 import StoreProvider from "./StoreProvider";
-import { useAppSelector } from "@/lib/hooks";
-
-const List = () => {
-  const todos = useAppSelector((state) => state.todos);
-
-  return (
-    <div>
-      {todos.map((todo) => (
-        <li key={todo.id}>{todo.value}</li>
-      ))}
-    </div>
-  );
-};
+import MarketData from "./components/MarketData/MarketData";
 
 export default function Home() {
   return (
     <StoreProvider>
-      <List />
+      <MarketData />
     </StoreProvider>
   );
 }

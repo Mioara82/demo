@@ -1,16 +1,20 @@
-import { configureStore } from "@reduxjs/toolkit";
-import todosReducer from "./features/todos/todoSlice";
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import marketReducer from "../lib/features/todos/marketSlice";
+
+const reduxLogger = require("redux-logger");
+const logger  =reduxLogger.createLogger();
+
+export const rootReducer = combineReducers({
+  market: marketReducer
+});
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {
-      todos: todosReducer,
-    },
+    reducer: rootReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
   });
 };
 
-// Infer the type of makeStore
 export type AppStore = ReturnType<typeof makeStore>;
-// Infer the `RootState` and `AppDispatch` types from the store itself
 export type RootState = ReturnType<AppStore["getState"]>;
 export type AppDispatch = AppStore["dispatch"];
