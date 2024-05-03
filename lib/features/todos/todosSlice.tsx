@@ -12,20 +12,6 @@ const initialState = [
   { value: "item 4", id: 4 },
 ];
 
-// interface AddTodoPayload {
-//   value: string;
-//   id: number;
-// }
-
-// interface ToggleTodoPayload {
-//   id: number;
-//   completed:boolean;
-// }
-
-// interface RemoveTodoPayload {
-//   id: number;
-// }
-
 const todosSlice = createSlice({
   name: "todos",
   initialState,
@@ -36,13 +22,13 @@ const todosSlice = createSlice({
     });
     builder.addCase(TOGGLE_TODO, (state, action: any) => {
       const nextItem = { ...action.payload };
-        nextItem.completed = !nextItem.completed;
-        return state.map((el) => {
-          if (el.id === action.payload.id) {
-            return nextItem;
-          }
-          return { ...el };
-        });
+      nextItem.completed = !nextItem.completed;
+      return state.map((el) => {
+        if (el.id === action.payload.id) {
+          return nextItem;
+        }
+        return { ...el };
+      });
     });
     builder.addCase(REMOVE_TODO, (state, action: any) => {
       const payload = action.payload;

@@ -1,11 +1,13 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import marketReducer from "../lib/features/todos/marketSlice";
+import todosReducer from "./features/todos/todosSlice";
 
 const reduxLogger = require("redux-logger");
 const logger  =reduxLogger.createLogger();
 
 export const rootReducer = combineReducers({
-  market: marketReducer
+  market: marketReducer,
+  todos:todosReducer
 });
 
 export const makeStore = () => {
