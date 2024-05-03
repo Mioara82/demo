@@ -1,5 +1,5 @@
 "use client";
-import StoreProvider from "./StoreProvider";
+import StoreProvider from "./providers/StoreProvider";
 import MarketData from "./components/MarketData/MarketData";
 
 export default function Home() {

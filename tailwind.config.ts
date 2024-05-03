@@ -9,30 +9,28 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
         light:{
-          background: "#F3F5F9",
-          primary: "#6161D680",
-
+          bg:"#E8F1F2",
+          primary: "#2E5077",
+          secondary:"#B97375",
+          focus:"#006494"
         },
         dark:{
-
+          bg:"#262322",
+          primary:"#4DA1A9",
+          secondary:"#CEB1BE",
+          focus:"#8093F1"
         }
       },
       fontFamily: {
         'space-grotesk': ['Space Grotesk', 'sans-serif'],
       },
-      fontWeight: {
-        'medium': 500,
-      },
+     
     },
   },
   plugins: [],
+  darkMode:"class",
 };
 export default config;
 
