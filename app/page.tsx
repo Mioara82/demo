@@ -32,7 +32,7 @@ const List = () => {
 export default function Home() {
   return (
     <StoreProvider>
-      <List />
+      <MarketData />
     </StoreProvider>
   );
 }
