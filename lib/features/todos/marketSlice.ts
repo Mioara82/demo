@@ -16,11 +16,12 @@ export const fetchMarketData = createAsyncThunk(
 );
 
 type errorType = null | undefined | string;
+type dataType = any;
 
 const marketSlice = createSlice({
   name: "market",
   initialState: {
-    data: null,
+    data: null as dataType,
     loading: "idle",
     error: null as errorType,
   },
